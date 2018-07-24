@@ -256,11 +256,11 @@
     </summary>
     
     
-      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
-    
       <category term="JavaScript" scheme="https://kestre.github.io/blog/tags/JavaScript/"/>
     
       <category term="RegExp" scheme="https://kestre.github.io/blog/tags/RegExp/"/>
+    
+      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
     
   </entry>
   
