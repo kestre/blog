@@ -718,7 +718,7 @@ body {
     color: #4a4a4a;
     font-size: 14px;
     line-height: 30px;
-    text-indent: 2em;
+    text-indent: 0;
     letter-spacing: 1px;
 }
 
