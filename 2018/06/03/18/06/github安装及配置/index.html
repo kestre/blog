@@ -54,32 +54,32 @@
             <li >
                         <a href="/">
                             <i class="iconfont icon-shouye1"></i>
-                            <span>HOME</span>
+                            <span>主页</span>
                         </a>
             </li>
             <li >
                         <a href="/tags">
                             <i class="iconfont icon-biaoqian1"></i>
-                            <span>TAGS</span>
+                            <span>标签</span>
                         </a>
             </li>
             <li >
                         <a href="/archives">
                             <i class="iconfont icon-guidang2"></i>
-                            <span>ARCHIVES</span>
+                            <span>存档</span>
                         </a>
             </li>
             <li >
                         <a href="/about/">
                             <i class="iconfont icon-guanyu2"></i>
-                            <span>ABOUT</span>
+                            <span>关于</span>
                         </a>
             </li>
             
                 <li>
                     <a id="search">
                         <i class="iconfont icon-sousuo1"></i>
-                        <span>SEARCH</span>
+                        <span>搜索</span>
                     </a>
                 </li>
                 
@@ -98,7 +98,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input" />
-            <span id="begin-search">search</span>
+            <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -121,9 +121,9 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">Post：<span>2018-06-03 00:00:00</span></span>
+        <span class="attr">发布于：<span>2018-06-03 00:00:00</span></span>
         
-        <span class="attr">Tags：/
+        <span class="attr">标签：/
         
         <a class="tag" href="/tags/#note" title="note">note</a>
         <span>/</span>
@@ -133,7 +133,7 @@
         
         
         </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
 </span>
     </div>
@@ -155,7 +155,7 @@
 <li><p>在本地生成ssh密匙</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br><a href="/img/18/06/github安装及配置.png"></a><br>为了验证是否成功，在git bash下输入：</p>
+<li><p>之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br><img src="/img/18/06/github安装及配置.png" alt=""><br>为了验证是否成功，在git bash下输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
