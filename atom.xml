@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kestre.github.io/blog/"/>
-  <updated>2018-08-02T01:21:45.382Z</updated>
+  <updated>2018-08-04T13:33:47.042Z</updated>
   <id>https://kestre.github.io/blog/</id>
   
   <author>
@@ -21,15 +21,20 @@
     <link href="https://kestre.github.io/blog/2018/07/24/18/07/%E8%9B%8B%E6%8C%9E/"/>
     <id>https://kestre.github.io/blog/2018/07/24/18/07/蛋挞/</id>
     <published>2018-07-23T16:00:00.000Z</published>
-    <updated>2018-08-02T01:21:45.382Z</updated>
+    <updated>2018-08-04T13:33:47.042Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="蛋挞液"><a href="#蛋挞液" class="headerlink" title="蛋挞液"></a>蛋挞液</h2><h3 id="配方一"><a href="#配方一" class="headerlink" title="配方一"></a>配方一</h3><p>牛奶：110g<br>细砂糖：40g<br>鸡蛋：2个<br>淡奶油：180g</p><h2 id="蛋挞皮"><a href="#蛋挞皮" class="headerlink" title="蛋挞皮"></a>蛋挞皮</h2><p>速冻挞皮：15个</p><p>烤箱210度预热5分钟<br>上火200度，下火210度，中层或者中下层，25分钟</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="配方一"><a href="#配方一" class="headerlink" title="配方一"></a>配方一</h2><table><thead><tr><th style="text-align:left">材料</th></tr></thead><tbody><tr><td style="text-align:left">鸡蛋</td><td style="text-align:left">2个</td></tr><tr><td style="text-align:left">牛奶</td><td style="text-align:left">110g</td></tr><tr><td style="text-align:left">细砂糖</td><td style="text-align:left">40g</td></tr><tr><td style="text-align:left">淡奶油</td><td style="text-align:left">180g</td></tr><tr><td style="text-align:left">速冻挞皮</td><td style="text-align:left">15个</td></tr><tr><td style="text-align:left">位置</td><td style="text-align:left">中层或中下层</td></tr><tr><td style="text-align:left">火候（预热5分钟）</td><td style="text-align:left">上下：200</td></tr><tr><td style="text-align:left">时间</td><td style="text-align:left">25分钟</td></tr></tbody></table><h2 id="配方二"><a href="#配方二" class="headerlink" title="配方二"></a>配方二</h2><table><thead><tr><th style="text-align:left">材料</th></tr></thead><tbody><tr><td style="text-align:left">鸡蛋</td><td style="text-align:left">2个</td></tr><tr><td style="text-align:left">牛奶</td><td style="text-align:left">100g</td></tr><tr><td style="text-align:left">细砂糖</td><td style="text-align:left">25g</td></tr><tr><td style="text-align:left">淡奶油（或牛奶）</td><td style="text-align:left">60g</td></tr><tr><td style="text-align:left">速冻挞皮</td><td style="text-align:left">10个</td></tr><tr><td style="text-align:left">位置</td><td style="text-align:left">中层</td></tr><tr><td style="text-align:left">火候（预热5分钟）</td><td style="text-align:left">上下：180</td></tr><tr><td style="text-align:left">时间</td><td style="text-align:left">20分钟</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;蛋挞液&quot;&gt;&lt;a href=&quot;#蛋挞液&quot; class=&quot;headerlink&quot; title=&quot;蛋挞液&quot;&gt;&lt;/a&gt;蛋挞液&lt;/h2&gt;&lt;h3 id=&quot;配方一&quot;&gt;&lt;a href=&quot;#配方一&quot; class=&quot;headerlink&quot; title=&quot;配方一&quot;&gt;&lt;/a&gt;配方一&lt;/h
+        &lt;h2 id=&quot;配方一&quot;&gt;&lt;a href=&quot;#配方一&quot; class=&quot;headerlink&quot; title=&quot;配方一&quot;&gt;&lt;/a&gt;配方一&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;材料&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thea
       
     
     </summary>
@@ -322,9 +327,9 @@
     <link href="https://kestre.github.io/blog/2018/06/01/18/06/memorandum/"/>
     <id>https://kestre.github.io/blog/2018/06/01/18/06/memorandum/</id>
     <published>2018-05-31T16:00:00.000Z</published>
-    <updated>2018-08-04T13:08:51.206Z</updated>
+    <updated>2018-08-04T13:13:06.168Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>Github安装及配置</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>Github安装及配置</li><li>戚风蛋糕</li></ul>]]></content>
     
     <summary type="html">
     
@@ -332,6 +337,7 @@
       
         &lt;ul&gt;
 &lt;li&gt;Github安装及配置&lt;/li&gt;
+&lt;li&gt;戚风蛋糕&lt;/li&gt;
 &lt;/ul&gt;
 
       
