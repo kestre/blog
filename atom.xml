@@ -322,31 +322,4 @@
     
   </entry>
   
-  <entry>
-    <title>未完成</title>
-    <link href="https://kestre.github.io/blog/2018/06/01/18/06/memorandum/"/>
-    <id>https://kestre.github.io/blog/2018/06/01/18/06/memorandum/</id>
-    <published>2018-05-31T16:00:00.000Z</published>
-    <updated>2018-08-18T09:12:40.260Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>计算机网络和因特网</li><li>戚风蛋糕</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;计算机网络和因特网&lt;/li&gt;
-&lt;li&gt;戚风蛋糕&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
-    
-  </entry>
-  
 </feed>
