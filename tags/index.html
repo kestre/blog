@@ -54,7 +54,7 @@
             <li >
                         <a href="/">
                             <i class="iconfont icon-shouye1"></i>
-                            <span>主页</span>
+                            <span>HOME</span>
                         </a>
             </li>
             <li 
@@ -62,26 +62,26 @@
                     >
                         <a href="/tags">
                             <i class="iconfont icon-biaoqian1"></i>
-                            <span>标签</span>
+                            <span>TAGS</span>
                         </a>
             </li>
             <li >
                         <a href="/archives">
                             <i class="iconfont icon-guidang2"></i>
-                            <span>存档</span>
+                            <span>ARCHIVES</span>
                         </a>
             </li>
             <li >
                         <a href="/about/">
                             <i class="iconfont icon-guanyu2"></i>
-                            <span>关于</span>
+                            <span>ABOUT</span>
                         </a>
             </li>
             
                 <li>
                     <a id="search">
                         <i class="iconfont icon-sousuo1"></i>
-                        <span>搜索</span>
+                        <span>SEARCH</span>
                     </a>
                 </li>
                 
@@ -96,7 +96,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input" />
-            <span id="begin-search">搜索</span>
+            <span id="begin-search">search</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -114,13 +114,13 @@
     
     <a href="#share" title="share" rel="1">share</a>
     
-    <a href="#note" title="note" rel="10">note</a>
+    <a href="#note" title="note" rel="11">note</a>
+    
+    <a href="#android" title="android" rel="1">android</a>
     
     <a href="#JavaScript" title="JavaScript" rel="1">JavaScript</a>
     
     <a href="#RegExp" title="RegExp" rel="1">RegExp</a>
-    
-    <a href="#android" title="android" rel="1">android</a>
     
     <a href="#github" title="github" rel="1">github</a>
     
@@ -128,19 +128,19 @@
     
     <a href="#计算机网络" title="计算机网络" rel="1">计算机网络</a>
     
-    <a href="#Android" title="Android" rel="1">Android</a>
-    
     <a href="#Ukelele" title="Ukelele" rel="5">Ukelele</a>
     
     <a href="#music" title="music" rel="5">music</a>
     
     <a href="#烘培" title="烘培" rel="3">烘培</a>
     
+    <a href="#Android" title="Android" rel="1">Android</a>
+    
     <a href="#game" title="game" rel="1">game</a>
     
-    <a href="#专插本" title="专插本" rel="2">专插本</a>
+    <a href="#专插本" title="专插本" rel="3">专插本</a>
     
-    <a href="#政治" title="政治" rel="1">政治</a>
+    <a href="#政治" title="政治" rel="2">政治</a>
     
     <a href="#程序设计基础" title="程序设计基础" rel="1">程序设计基础</a>
     
@@ -194,9 +194,9 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/2018/06/03/18/06/RegExp/">
+        <a href="/2018/06/30/18/06/android_Call_Phone/">
             <h2 class="post-title">
-                JavaScript中的正则表达式
+                android调用拨打电话（包括运行时权限及动态权限）
             </h2>
             
         </a>
@@ -208,9 +208,9 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/2018/06/30/18/06/android_Call_Phone/">
+        <a href="/2018/06/03/18/06/RegExp/">
             <h2 class="post-title">
-                android调用拨打电话（包括运行时权限及动态权限）
+                JavaScript中的正则表达式
             </h2>
             
         </a>
@@ -278,9 +278,37 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
+        <a href="/2019/01/16/19/01/政治第二章.1/">
+            <h2 class="post-title">
+                政治第二章
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
         <a href="/2018/09/06/18/09/三级网络技术/">
             <h2 class="post-title">
                 NCRE三级（网络技术）
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/2019/01/15/19/01/程序设计基础第一章/">
+            <h2 class="post-title">
+                程序设计基础第一章
             </h2>
             
         </a>
@@ -301,14 +329,21 @@
         <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
     </div>
     
+</div>
+
+<div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="android">
+                    <span class="tag-text">android</span>
+                </span>
+    
     <!-- <li class="listing-item">
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/2019/01/15/19/01/程序设计基础第一章/">
+        <a href="/2018/06/30/18/06/android_Call_Phone/">
             <h2 class="post-title">
-                程序设计基础第一章
+                android调用拨打电话（包括运行时权限及动态权限）
             </h2>
             
         </a>
@@ -351,27 +386,6 @@
         <a href="/2018/06/03/18/06/RegExp/">
             <h2 class="post-title">
                 JavaScript中的正则表达式
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="android">
-                    <span class="tag-text">android</span>
-                </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/2018/06/30/18/06/android_Call_Phone/">
-            <h2 class="post-title">
-                android调用拨打电话（包括运行时权限及动态权限）
             </h2>
             
         </a>
@@ -435,27 +449,6 @@
         <a href="/2018/06/25/18/06/计算机网络和英特网/">
             <h2 class="post-title">
                 计算机网络和因特网
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Android">
-                    <span class="tag-text">Android</span>
-                </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/2018/07/03/18/07/Android申请动态权限/">
-            <h2 class="post-title">
-                Android一次申请多个动态权限
             </h2>
             
         </a>
@@ -668,6 +661,27 @@
 </div>
 
 <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Android">
+                    <span class="tag-text">Android</span>
+                </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/2018/07/03/18/07/Android申请动态权限/">
+            <h2 class="post-title">
+                Android一次申请多个动态权限
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="game">
                     <span class="tag-text">game</span>
                 </span>
@@ -698,9 +712,9 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/2019/01/14/19/01/政治第一章/">
+        <a href="/2019/01/16/19/01/政治第二章.1/">
             <h2 class="post-title">
-                政治第一章
+                政治第二章
             </h2>
             
         </a>
@@ -721,12 +735,40 @@
         <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
     </div>
     
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/2019/01/14/19/01/政治第一章/">
+            <h2 class="post-title">
+                政治第一章
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
 </div>
 
 <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="政治">
                     <span class="tag-text">政治</span>
                 </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/2019/01/16/19/01/政治第二章.1/">
+            <h2 class="post-title">
+                政治第二章
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
     
     <!-- <li class="listing-item">
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
