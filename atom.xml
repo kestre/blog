@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kestre.github.io/blog/"/>
-  <updated>2019-01-17T09:55:14.491Z</updated>
+  <updated>2019-01-17T09:58:47.303Z</updated>
   <id>https://kestre.github.io/blog/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://kestre.github.io/blog/2019/01/19/19/01/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
     <id>https://kestre.github.io/blog/2019/01/19/19/01/程序设计基础第三章/</id>
     <published>2019-01-18T16:00:00.000Z</published>
-    <updated>2019-01-17T09:55:14.491Z</updated>
+    <updated>2019-01-17T09:58:47.303Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="习题三"><a href="#习题三" class="headerlink" title="习题三"></a>习题三</h1><h3 id="1-以下程序的输出结果是—8—。"><a href="#1-以下程序的输出结果是—8—。" class="headerlink" title="1.以下程序的输出结果是—8—。"></a>1.以下程序的输出结果是—8—。</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    a += (a = <span class="number">8</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="习题三"><a href="#习题三" class="headerlink" title="习题三"></a>习题三</h1><h3 id="一、填空题"><a href="#一、填空题" class="headerlink" title="一、填空题"></a>一、填空题</h3><h4 id="1-以下程序的输出结果是-—-16-—-。"><a href="#1-以下程序的输出结果是-—-16-—-。" class="headerlink" title="1.以下程序的输出结果是 — 16 — 。"></a>1.以下程序的输出结果是 — 16 — 。</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    a += (a = <span class="number">8</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" %d\n "</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;习题三&quot;&gt;&lt;a href=&quot;#习题三&quot; class=&quot;headerlink&quot; title=&quot;习题三&quot;&gt;&lt;/a&gt;习题三&lt;/h1&gt;&lt;h3 id=&quot;1-以下程序的输出结果是—8—。&quot;&gt;&lt;a href=&quot;#1-以下程序的输出结果是—8—。&quot; class=&quot;headerli
+        &lt;h1 id=&quot;习题三&quot;&gt;&lt;a href=&quot;#习题三&quot; class=&quot;headerlink&quot; title=&quot;习题三&quot;&gt;&lt;/a&gt;习题三&lt;/h1&gt;&lt;h3 id=&quot;一、填空题&quot;&gt;&lt;a href=&quot;#一、填空题&quot; class=&quot;headerlink&quot; title=&quot;一、填空题&quot;&gt;&lt;/a&gt;
       
     
     </summary>
