@@ -125,13 +125,13 @@
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#note" title="note">note</a>
-        <span>/</span>
-        
         <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
         <span>/</span>
         
         <a class="tag" href="/tags/#RegExp" title="RegExp">RegExp</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#note" title="note">note</a>
         <span>/</span>
         
         
@@ -152,6 +152,7 @@
 <h2 id="直接量字符"><a href="#直接量字符" class="headerlink" title="直接量字符"></a>直接量字符</h2><ul>
 <li>正则表达式语法也支持非字母的字符匹配，这些字符需要通过反斜杠（ \ ）作为前缀进行转义。</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -202,9 +203,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><ul>
 <li>将直接量字符单独放进方括号内就组成了字符类，一个字符类可以匹配它所包括的任意字符。</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -218,7 +221,7 @@
 <td style="text-align:left">方括号内的任意字符</td>
 </tr>
 <tr>
-<td style="text-align:left">[^…]</td>
+<td style="text-align:left"><sup><a href="#fn_..." id="reffn_...">...</a></sup></td>
 <td style="text-align:left">不在方括号内的任意字符</td>
 </tr>
 <tr>
@@ -231,7 +234,7 @@
 </tr>
 <tr>
 <td style="text-align:left">\W</td>
-<td style="text-align:left">任何不是ASCII字符组成的单词，等价于[^a-zA-Z0-9]</td>
+<td style="text-align:left">任何不是ASCII字符组成的单词，等价于<sup><a href="#fn_a-zA-Z0-9" id="reffn_a-zA-Z0-9">a-zA-Z0-9</a></sup></td>
 </tr>
 <tr>
 <td style="text-align:left">\s</td>
@@ -247,7 +250,7 @@
 </tr>
 <tr>
 <td style="text-align:left">\D</td>
-<td style="text-align:left">除了ASCII数字之外的任何字符，等价于[^0-9]</td>
+<td style="text-align:left">除了ASCII数字之外的任何字符，等价于<sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup></td>
 </tr>
 <tr>
 <td style="text-align:left">[\b]</td>
@@ -255,12 +258,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>注意：在反括号之内也可以写特殊转义字符。</li>
 </ul>
 <h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><ul>
 <li>除了用 /\d\d/ , /\d\d\d\d/ 表示两位数和四位数，可以用 重复字符语法。</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -295,6 +300,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="非贪婪的重复"><a href="#非贪婪的重复" class="headerlink" title="非贪婪的重复"></a>非贪婪的重复</h2><h3 id="贪婪"><a href="#贪婪" class="headerlink" title="贪婪"></a>贪婪</h3><ul>
 <li>在上面列出的匹配重复字符是尽可能的多匹配，而且允许后续的正则表达式继续匹配。因此，我们称之为”贪婪的“匹配。<br>例如：</li>
 </ul>
@@ -323,6 +329,7 @@
 <ul>
 <li>在正则表达式中可以使用（？：）创建不带数字编码的引用。</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -349,9 +356,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="指定匹配位置"><a href="#指定匹配位置" class="headerlink" title="指定匹配位置"></a>指定匹配位置</h2><ul>
 <li>正则表达式中的锚字符</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -386,10 +395,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><ul>
 <li>用以说明高级匹配模式的规则。</li>
 </ul>
 <p><strong>注意：</strong>修饰符放在 ” / “ 符号之外的，也就是说，它们不是出现在两条斜线之间，而是第二条斜线之后。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -412,6 +423,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="2-用于模式匹配的String方法"><a href="#2-用于模式匹配的String方法" class="headerlink" title="2.用于模式匹配的String方法"></a>2.用于模式匹配的String方法</h1><ul>
 <li>讨论String对象的一些用以执行正则表达式模式匹配和检索替换操作的方法</li>
 </ul>
@@ -420,6 +432,7 @@
 </ul>
 <p><strong>注意：</strong>如果找不到匹配的子串，它将返回-1。<br><strong>注意：</strong>search()方法不支持全局检索，因此它忽略正则表达式参数中的修饰符g</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringObject.search(regexp/substr)</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -434,11 +447,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"JavaScript"</span>.search(<span class="regexp">/script/i</span>);</span><br><span class="line"><span class="comment">// 返回值为 4</span></span><br></pre></td></tr></table></figure>
 <h2 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h2><ul>
 <li>用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringObject.replace(regexp/substr,replacement)</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -457,11 +472,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"JavaScript"</span>.replace(<span class="regexp">/script/i</span>, <span class="string">"SCRIPT"</span>);</span><br><span class="line"><span class="comment">// 返回值为 JavaSCRIPT</span></span><br></pre></td></tr></table></figure>
 <h2 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h2><ul>
 <li>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</li>
 </ul>
 <p><strong>注意：</strong>该方法类似 indexOf() 和 lastIndexOf()，但是它返回指定的值，而不是字符串的位置。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stringObject.match(searchvalue)</span><br><span class="line">stringObject.match(regexp)</span><br></pre></td></tr></table></figure></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -480,11 +497,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1 plus 2 equal 3"</span>.match(<span class="regexp">/\d+/g</span>);</span><br><span class="line"><span class="comment">// 返回值为 ["1", "2", "3"] 的数组</span></span><br></pre></td></tr></table></figure>
 <h2 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h2><ul>
 <li>用于检索字符串中的正则表达式的匹配。</li>
 </ul>
 <p><strong>注意：</strong>返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RegExpObject.exec(string)</span><br></pre></td></tr></table></figure></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -499,6 +518,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\d+<span class="regexp">/g.exec("1 plus 2 equal 3");</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 返回值为数组,属性 index：0 ，input: "1 plus 2 equal 3"</span></span><br></pre></td></tr></table></figure>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li>JavaScript权威指南（第六版）</li>
