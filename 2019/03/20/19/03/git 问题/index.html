@@ -274,7 +274,7 @@ height:28vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">478</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">475</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,11 +405,13 @@ height:28vh;
     <article class="article-entry">
         <p>在使用Git 配置公司的远程仓库时git push origin master，出现以下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &apos;https://gitee.com/XXXXX.git&apos;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p>
 <p>从提示语中可以看出是，问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：<br>1、强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容，如果远程仓库是刚建的，没有代码，可以这样操作，尽量避免这种操作方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure></p>
-<p>2、先把git的东西fetch到你本地然后merge后再push<br>``<br>git fetch<br>git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3、在使用的时候，git merge，又出现了以下的问题</span><br></pre></td></tr></table></figure></p>
-<p>xu:QProj xiaokai$ git merge<br>fatal: refusing to merge unrelated histories<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于这个问题。使用git pull origin master --allow-unrelated-histories </span><br><span class="line">来处理一下。</span><br><span class="line">4、然后继续git merge,依然有问题</span><br></pre></td></tr></table></figure></p>
-<p>fatal: You have not concluded your merge (MERGE_HEAD exists).<br>Please, commit your changes before you merge.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个就好处理了，是我们没有提交当前的变化， git add .,git commit -am &quot;提交信息&quot;</span><br><span class="line"></span><br><span class="line">然后再来一次git merge,然后ok.</span><br><span class="line">5、然后输入git pull,显示如下</span><br></pre></td></tr></table></figure></p>
-<p>Already up-to-date.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">最后就可以执行xu:QProj xiaokai$ git push origin master </span><br><span class="line">将代码上传到公司的远程仓库中。</span><br></pre></td></tr></table></figure></p>
-<p>xu:QProj xiaokai$ git push origin master<br>Counting objects: 693, done.<br>Delta compression using up to 4 threads.<br>Compressing objects: 100% (636/636), done.<br>Writing objects: 100% (693/693), 2.83 MiB | 570.00 KiB/s, done.<br>Total 693 (delta 362), reused 0 (delta 0)<br>remote: Resolving deltas: 100% (362/362), completed with 1 local object.<br>remote: Powered by Gitee.com<br>To <a href="https://gitee.com/XXXXX.git" target="_blank" rel="noopener">https://gitee.com/XXXXX.git</a><br>   83902a5..8100890  master -&gt; master<br>```<br>上传完成。</p>
+<p>2、先把git的东西fetch到你本地然后merge后再push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge</span><br></pre></td></tr></table></figure></p>
+<p>3、在使用的时候，git merge，又出现了以下的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git merge</span><br><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure></p>
+<p>对于这个问题。使用git pull origin master —allow-unrelated-histories<br>来处理一下。<br>4、然后继续git merge,依然有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fatal: You have not concluded your merge (MERGE_HEAD exists).</span><br><span class="line">Please, commit your changes before you merge.</span><br></pre></td></tr></table></figure></p>
+<p>这个就好处理了，是我们没有提交当前的变化， git add .,git commit -am “提交信息”</p>
+<p>然后再来一次git merge,然后ok.<br>5、然后输入git pull,显示如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Already up-to-date.</span><br></pre></td></tr></table></figure></p>
+<p>最后就可以执行xu:QProj xiaokai$ git push origin master<br>将代码上传到公司的远程仓库中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">Counting objects: 693, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (636/636), done.</span><br><span class="line">Writing objects: 100% (693/693), 2.83 MiB | 570.00 KiB/s, done.</span><br><span class="line">Total 693 (delta 362), reused 0 (delta 0)</span><br><span class="line">remote: Resolving deltas: 100% (362/362), completed with 1 local object.</span><br><span class="line">remote: Powered by Gitee.com</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line">   83902a5..8100890  master -&gt; master</span><br></pre></td></tr></table></figure></p>
+<p>上传完成。</p>
 
     </article>
     <!-- license  -->
@@ -1498,14 +1500,9 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ["$","$"], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], processEscapes: true } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(); for (var i = 0;
-    i
-    < all.length; ++i) all[i].SourceElement().parentNode.className +=' has-jax' ; }); </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</body>
+    </body>
 </html>
 
 
