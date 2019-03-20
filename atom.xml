@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kestre.github.io/blog/"/>
-  <updated>2019-02-22T07:24:41.313Z</updated>
+  <updated>2019-03-20T05:30:56.986Z</updated>
   <id>https://kestre.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 上传出现“ ! [rejected] master -&gt; master (non-fast-forward)”</title>
+    <link href="https://kestre.github.io/blog/2019/03/20/19/03/git%20%E9%97%AE%E9%A2%98/"/>
+    <id>https://kestre.github.io/blog/2019/03/20/19/03/git 问题/</id>
+    <published>2019-03-19T16:00:00.000Z</published>
+    <updated>2019-03-20T05:30:56.986Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用Git 配置公司的远程仓库时git push origin master，出现以下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &apos;https://gitee.com/XXXXX.git&apos;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p><p>从提示语中可以看出是，问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：<br>1、强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容，如果远程仓库是刚建的，没有代码，可以这样操作，尽量避免这种操作方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure></p><p>2、先把git的东西fetch到你本地然后merge后再push<br>``<br>git fetch<br>git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3、在使用的时候，git merge，又出现了以下的问题</span><br></pre></td></tr></table></figure></p><p>xu:QProj xiaokai$ git merge<br>fatal: refusing to merge unrelated histories<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于这个问题。使用git pull origin master --allow-unrelated-histories </span><br><span class="line">来处理一下。</span><br><span class="line">4、然后继续git merge,依然有问题</span><br></pre></td></tr></table></figure></p><p>fatal: You have not concluded your merge (MERGE_HEAD exists).<br>Please, commit your changes before you merge.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个就好处理了，是我们没有提交当前的变化， git add .,git commit -am &quot;提交信息&quot;</span><br><span class="line"></span><br><span class="line">然后再来一次git merge,然后ok.</span><br><span class="line">5、然后输入git pull,显示如下</span><br></pre></td></tr></table></figure></p><p>Already up-to-date.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">最后就可以执行xu:QProj xiaokai$ git push origin master </span><br><span class="line">将代码上传到公司的远程仓库中。</span><br></pre></td></tr></table></figure></p><p>xu:QProj xiaokai$ git push origin master<br>Counting objects: 693, done.<br>Delta compression using up to 4 threads.<br>Compressing objects: 100% (636/636), done.<br>Writing objects: 100% (693/693), 2.83 MiB | 570.00 KiB/s, done.<br>Total 693 (delta 362), reused 0 (delta 0)<br>remote: Resolving deltas: 100% (362/362), completed with 1 local object.<br>remote: Powered by Gitee.com<br>To <a href="https://gitee.com/XXXXX.git" target="_blank" rel="noopener">https://gitee.com/XXXXX.git</a><br>   83902a5..8100890  master -&gt; master<br>```<br>上传完成。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Git 配置公司的远程仓库时git push origin master，出现以下问题&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+    
+      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
+    
+      <category term="git" scheme="https://kestre.github.io/blog/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>政治第十四章</title>
@@ -526,33 +551,6 @@
       <category term="专插本" scheme="https://kestre.github.io/blog/tags/%E4%B8%93%E6%8F%92%E6%9C%AC/"/>
     
       <category term="政治" scheme="https://kestre.github.io/blog/tags/%E6%94%BF%E6%B2%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>程序设计基础第四章</title>
-    <link href="https://kestre.github.io/blog/2019/01/20/19/01/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AC%AC%E5%9B%9B%E7%AB%A0/"/>
-    <id>https://kestre.github.io/blog/2019/01/20/19/01/程序设计基础第四章/</id>
-    <published>2019-01-19T16:00:00.000Z</published>
-    <updated>2019-01-25T08:12:17.614Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="习题-4"><a href="#习题-4" class="headerlink" title="习题 4"></a>习题 4</h1><h4 id="1-编写程序，读入3个整数给-a、b、c，然后交换它们中的数，把-a-中原来的值给-b，把-b-中原来的值给-c，把-c-中原来的值给-a，然后输出-a、b、c。"><a href="#1-编写程序，读入3个整数给-a、b、c，然后交换它们中的数，把-a-中原来的值给-b，把-b-中原来的值给-c，把-c-中原来的值给-a，然后输出-a、b、c。" class="headerlink" title="1.编写程序，读入3个整数给 a、b、c，然后交换它们中的数，把 a 中原来的值给 b，把 b 中原来的值给 c，把 c 中原来的值给 a，然后输出 a、b、c。"></a>1.编写程序，读入3个整数给 a、b、c，然后交换它们中的数，把 a 中原来的值给 b，把 b 中原来的值给 c，把 c 中原来的值给 a，然后输出 a、b、c。</h4><h4 id="2-加密数据，加密规则为：将单词中的每个字母变成其后的第4个。请把“class”加密输出。"><a href="#2-加密数据，加密规则为：将单词中的每个字母变成其后的第4个。请把“class”加密输出。" class="headerlink" title="2.加密数据，加密规则为：将单词中的每个字母变成其后的第4个。请把“class”加密输出。"></a>2.加密数据，加密规则为：将单词中的每个字母变成其后的第4个。请把“class”加密输出。</h4><h4 id="3-任意从键盘输入一个3位整数，要求正确地分离出它的个位、十位和百位数，并分别在屏幕上输出。"><a href="#3-任意从键盘输入一个3位整数，要求正确地分离出它的个位、十位和百位数，并分别在屏幕上输出。" class="headerlink" title="3.任意从键盘输入一个3位整数，要求正确地分离出它的个位、十位和百位数，并分别在屏幕上输出。"></a>3.任意从键盘输入一个3位整数，要求正确地分离出它的个位、十位和百位数，并分别在屏幕上输出。</h4><h4 id="4-输入任意3个整数，求它们的和及平均值。"><a href="#4-输入任意3个整数，求它们的和及平均值。" class="headerlink" title="4.输入任意3个整数，求它们的和及平均值。"></a>4.输入任意3个整数，求它们的和及平均值。</h4><h4 id="5-输入存款金额-money、存期-year和年利率-rate，采用定期一年，到期本息自动转存方式，根据公式计算存款到期时的本息合计-sum（税前），输出时保留两位小数。sum-money-1-rate-year-。"><a href="#5-输入存款金额-money、存期-year和年利率-rate，采用定期一年，到期本息自动转存方式，根据公式计算存款到期时的本息合计-sum（税前），输出时保留两位小数。sum-money-1-rate-year-。" class="headerlink" title="5.输入存款金额 money、存期 year和年利率 rate，采用定期一年，到期本息自动转存方式，根据公式计算存款到期时的本息合计 sum（税前），输出时保留两位小数。sum = money ( 1 + rate ) ^ year 。"></a>5.输入存款金额 money、存期 year和年利率 rate，采用定期一年，到期本息自动转存方式，根据公式计算存款到期时的本息合计 sum（税前），输出时保留两位小数。sum = money ( 1 + rate ) ^ year 。</h4><h4 id="6-输入梯形的上底边长、下底边长和高，求梯形的面积。"><a href="#6-输入梯形的上底边长、下底边长和高，求梯形的面积。" class="headerlink" title="6.输入梯形的上底边长、下底边长和高，求梯形的面积。"></a>6.输入梯形的上底边长、下底边长和高，求梯形的面积。</h4><h4 id="7-编写程序，由一个人的出生时间计算此人某年的年龄。"><a href="#7-编写程序，由一个人的出生时间计算此人某年的年龄。" class="headerlink" title="7.编写程序，由一个人的出生时间计算此人某年的年龄。"></a>7.编写程序，由一个人的出生时间计算此人某年的年龄。</h4><h4 id="8-用编程的形式输出学生入学的姓名、性别、年龄、学号和入学成绩。"><a href="#8-用编程的形式输出学生入学的姓名、性别、年龄、学号和入学成绩。" class="headerlink" title="8.用编程的形式输出学生入学的姓名、性别、年龄、学号和入学成绩。"></a>8.用编程的形式输出学生入学的姓名、性别、年龄、学号和入学成绩。</h4><h4 id="9-输入一个华氏温度，要求输出摄氏温度。"><a href="#9-输入一个华氏温度，要求输出摄氏温度。" class="headerlink" title="9.输入一个华氏温度，要求输出摄氏温度。"></a>9.输入一个华氏温度，要求输出摄氏温度。</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;习题-4&quot;&gt;&lt;a href=&quot;#习题-4&quot; class=&quot;headerlink&quot; title=&quot;习题 4&quot;&gt;&lt;/a&gt;习题 4&lt;/h1&gt;&lt;h4 id=&quot;1-编写程序，读入3个整数给-a、b、c，然后交换它们中的数，把-a-中原来的值给-b，把-b-中原来的值给-c，
-      
-    
-    </summary>
-    
-    
-      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
-    
-      <category term="专插本" scheme="https://kestre.github.io/blog/tags/%E4%B8%93%E6%8F%92%E6%9C%AC/"/>
-    
-      <category term="程序设计基础" scheme="https://kestre.github.io/blog/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
