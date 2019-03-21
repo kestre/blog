@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kestre.github.io/blog/"/>
-  <updated>2019-03-20T05:33:33.540Z</updated>
+  <updated>2019-03-21T07:10:14.820Z</updated>
   <id>https://kestre.github.io/blog/</id>
   
   <author>
@@ -17,19 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>git 上传出现“ ! [rejected] master -&gt; master (non-fast-forward)”</title>
-    <link href="https://kestre.github.io/blog/2019/03/20/19/03/git%20%E9%97%AE%E9%A2%98/"/>
-    <id>https://kestre.github.io/blog/2019/03/20/19/03/git 问题/</id>
-    <published>2019-03-19T16:00:00.000Z</published>
-    <updated>2019-03-20T05:33:33.540Z</updated>
+    <title>contenteditable属性</title>
+    <link href="https://kestre.github.io/blog/2019/03/21/19/03/contenteditable%E5%B1%9E%E6%80%A7/"/>
+    <id>https://kestre.github.io/blog/2019/03/21/19/03/contenteditable属性/</id>
+    <published>2019-03-20T16:00:00.000Z</published>
+    <updated>2019-03-21T07:10:14.820Z</updated>
     
-    <content type="html"><![CDATA[<p>在使用Git 配置公司的远程仓库时git push origin master，出现以下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &apos;https://gitee.com/XXXXX.git&apos;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p><p>从提示语中可以看出是，问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：<br>1、强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容，如果远程仓库是刚建的，没有代码，可以这样操作，尽量避免这种操作方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure></p><p>2、先把git的东西fetch到你本地然后merge后再push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge</span><br></pre></td></tr></table></figure></p><p>3、在使用的时候，git merge，又出现了以下的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git merge</span><br><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure></p><p>对于这个问题。使用git pull origin master —allow-unrelated-histories<br>来处理一下。<br>4、然后继续git merge,依然有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fatal: You have not concluded your merge (MERGE_HEAD exists).</span><br><span class="line">Please, commit your changes before you merge.</span><br></pre></td></tr></table></figure></p><p>这个就好处理了，是我们没有提交当前的变化， git add .,git commit -am “提交信息”</p><p>然后再来一次git merge,然后ok.<br>5、然后输入git pull,显示如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Already up-to-date.</span><br></pre></td></tr></table></figure></p><p>最后就可以执行xu:QProj xiaokai$ git push origin master<br>将代码上传到公司的远程仓库中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">Counting objects: 693, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (636/636), done.</span><br><span class="line">Writing objects: 100% (693/693), 2.83 MiB | 570.00 KiB/s, done.</span><br><span class="line">Total 693 (delta 362), reused 0 (delta 0)</span><br><span class="line">remote: Resolving deltas: 100% (362/362), completed with 1 local object.</span><br><span class="line">remote: Powered by Gitee.com</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line">   83902a5..8100890  master -&gt; master</span><br></pre></td></tr></table></figure></p><p>上传完成。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="contenteditable-”true”属性让div-css可以相当于Input"><a href="#contenteditable-”true”属性让div-css可以相当于Input" class="headerlink" title="contenteditable=”true”属性让div+css可以相当于Input"></a>contenteditable=”true”属性让div+css可以相当于Input</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div contenteditable=&quot;true&quot;&gt;可以编辑里面的内容&lt;/div&gt;</span><br></pre></td></tr></table></figure><p>如果你在BODY里面加上contenteditable=”true”，可以发现该属性是多么的神奇。因此我们可以给HTML标签设置contenteditable=”true”属性则可以对该标签进行编辑。 contenteditable属性兼容所有浏览器（IE6之前的版本是否兼容未测试） 在有些时候我们完全可以用DIV去替代input或者textarea来达到同样的效果，例如，在使用ajax的时候，在提交表单时我们可以获取DIV的内容。 细心的人会发现，QQ空间中的发表说说的文本框其实就是一个DIV，而非textarea文本框。 Div+CSS如何模拟textarea文本域高度自适应以达到html5标准的contenteditable属性 主要通过为标签添加HTML5中的contenteditable属性达到此效果（contenteditable：规定是否允许用户编辑内容），很棒的是，此属性IE也会支持，所以不用再为兼容问题太去纠结了。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;在使用Git 配置公司的远程仓库时git push origin master，出现以下问题&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+        &lt;h1 id=&quot;contenteditable-”true”属性让div-css可以相当于Input&quot;&gt;&lt;a href=&quot;#contenteditable-”true”属性让div-css可以相当于Input&quot; class=&quot;headerlink&quot; title=&quot;contente
+      
+    
+    </summary>
+    
+    
+      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
+    
+      <category term="html" scheme="https://kestre.github.io/blog/tags/html/"/>
+    
+      <category term="css" scheme="https://kestre.github.io/blog/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 上传问题</title>
+    <link href="https://kestre.github.io/blog/2019/03/20/19/03/git%20%E9%97%AE%E9%A2%98/"/>
+    <id>https://kestre.github.io/blog/2019/03/20/19/03/git 问题/</id>
+    <published>2019-03-19T16:00:00.000Z</published>
+    <updated>2019-03-21T07:07:32.872Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git-上传出现“-rejected-master-gt-master-non-fast-forward-”"><a href="#git-上传出现“-rejected-master-gt-master-non-fast-forward-”" class="headerlink" title="git 上传出现“ ! [rejected] master -&gt; master (non-fast-forward)”"></a>git 上传出现“ ! [rejected] master -&gt; master (non-fast-forward)”</h1><p>在使用Git 配置的远程仓库时git push origin master，出现以下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &apos;https://gitee.com/XXXXX.git&apos;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p><p>从提示语中可以看出是，问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：<br>1、强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容，如果远程仓库是刚建的，没有代码，可以这样操作，尽量避免这种操作方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure></p><p>2、先把git的东西fetch到你本地然后merge后再push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge</span><br></pre></td></tr></table></figure></p><p>3、在使用的时候，git merge，又出现了以下的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git merge</span><br><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure></p><p>对于这个问题。使用git pull origin master —allow-unrelated-histories<br>来处理一下。<br>4、然后继续git merge,依然有问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fatal: You have not concluded your merge (MERGE_HEAD exists).</span><br><span class="line">Please, commit your changes before you merge.</span><br></pre></td></tr></table></figure></p><p>这个就好处理了，是我们没有提交当前的变化， git add .,git commit -am “提交信息”</p><p>然后再来一次git merge,然后ok.<br>5、然后输入git pull,显示如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Already up-to-date.</span><br></pre></td></tr></table></figure></p><p>最后就可以执行xu:QProj xiaokai$ git push origin master<br>将代码上传到公司的远程仓库中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xu:QProj xiaokai$ git push origin master</span><br><span class="line">Counting objects: 693, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (636/636), done.</span><br><span class="line">Writing objects: 100% (693/693), 2.83 MiB | 570.00 KiB/s, done.</span><br><span class="line">Total 693 (delta 362), reused 0 (delta 0)</span><br><span class="line">remote: Resolving deltas: 100% (362/362), completed with 1 local object.</span><br><span class="line">remote: Powered by Gitee.com</span><br><span class="line">To https://gitee.com/XXXXX.git</span><br><span class="line">   83902a5..8100890  master -&gt; master</span><br></pre></td></tr></table></figure></p><p>上传完成。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;git-上传出现“-rejected-master-gt-master-non-fast-forward-”&quot;&gt;&lt;a href=&quot;#git-上传出现“-rejected-master-gt-master-non-fast-forward-”&quot; class=&quot;hea
       
     
     </summary>
@@ -524,33 +551,6 @@
       <category term="专插本" scheme="https://kestre.github.io/blog/tags/%E4%B8%93%E6%8F%92%E6%9C%AC/"/>
     
       <category term="程序设计基础" scheme="https://kestre.github.io/blog/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>政治第四章</title>
-    <link href="https://kestre.github.io/blog/2019/01/21/19/01/%E6%94%BF%E6%B2%BB%E7%AC%AC%E5%9B%9B%E7%AB%A0/"/>
-    <id>https://kestre.github.io/blog/2019/01/21/19/01/政治第四章/</id>
-    <published>2019-01-20T16:00:00.000Z</published>
-    <updated>2019-01-23T08:06:13.560Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="社会主义建设道路初步探索的理论成果"><a href="#社会主义建设道路初步探索的理论成果" class="headerlink" title="社会主义建设道路初步探索的理论成果"></a>社会主义建设道路初步探索的理论成果</h1><h2 id="识记"><a href="#识记" class="headerlink" title="识记"></a>识记</h2><h3 id="社会主义建设道路初步探索中的重要理论成果"><a href="#社会主义建设道路初步探索中的重要理论成果" class="headerlink" title="社会主义建设道路初步探索中的重要理论成果"></a>社会主义建设道路初步探索中的重要理论成果</h3><ul><li>党在中国社会主义建设道路的初步探索中取得的重要理论成果：（1）调动一切积极因素为社会主义事业服务。（2）正确认识和处理社会主义社会矛盾的思想。（3）走中国工业化道路的思想。</li><li>在探索社会主义建设道路的过程中，毛泽东以及党的其他领导人，还提出了一些重要的思想理论观点，其中涉及国防建设和军队建设、实现祖国统一、外交和国际战略、执政党建设等方面，党在探索社会主义道路过程中取得的重要理论成果，是毛泽东思想的重要组成部分，丰富和发展了科学社会主义理论，成为中国特色社会主义理论体系的重要思想来源。</li></ul><h3 id="社会主义建设道路初步探索的意义"><a href="#社会主义建设道路初步探索的意义" class="headerlink" title="社会主义建设道路初步探索的意义"></a>社会主义建设道路初步探索的意义</h3><ul><li>党领导人民探索社会主义建设道路，经历艰辛和曲折，在理论和实践上取得了一系列重要成果。这些成果对于巩固我国社会主义制度，开创和发展中国特色社会主义，对于促进世界社会主义发展，具有重要意义：</li><li>（1）巩固和发展了我国的社会主义制度。</li><li>（2）为开创中国特色社会主义提供了宝贵经验、理论准备、物质基础。</li><li>（3）丰富了科学社会主义的理论和实践。</li></ul><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><h3 id="调动一切积极因素为社会主义服务"><a href="#调动一切积极因素为社会主义服务" class="headerlink" title="调动一切积极因素为社会主义服务"></a>调动一切积极因素为社会主义服务</h3><ul><li>调动一切积极因素为社会主义事业服务，必须坚持中国共产党的领导；</li><li>调动一切积极因素为社会主义事业服务，必须发展社会主义民主政治；</li><li>调动一切积极因素为社会主义事业服务，有一个如何认识社会主义发展阶段和社会主义建设规律的问题。</li></ul><h3 id="走中国工业化道路"><a href="#走中国工业化道路" class="headerlink" title="走中国工业化道路"></a>走中国工业化道路</h3><ul><li>在《关于正确处理人民内部矛盾的问题》中，毛泽东明确提出了中国工业化道路的问题，主要是指重工业、轻工业和农业的发展关系问题，要走一条有别于苏联的中国工业化道路。</li><li>走中国工业化道路：1.必须明确战略目标和战略步骤；2.必须采取正确的经济建设方针；3.必须发展科学技术和文化教育；4。必须重视知识分子工作；5.必须调整和完善所有制结构；6.必须积极探索适合我国情况的经济体制和运行机制。</li></ul><h3 id="党对社会主义建设道路初步探索的经验教训"><a href="#党对社会主义建设道路初步探索的经验教训" class="headerlink" title="党对社会主义建设道路初步探索的经验教训"></a>党对社会主义建设道路初步探索的经验教训</h3><ul><li>2017年考过</li></ul><h3 id="正确认识改革开放前和改革开放后两个历史时期及其相互关系"><a href="#正确认识改革开放前和改革开放后两个历史时期及其相互关系" class="headerlink" title="正确认识改革开放前和改革开放后两个历史时期及其相互关系"></a>正确认识改革开放前和改革开放后两个历史时期及其相互关系</h3><ul><li>2016年考过</li></ul><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="正确认识和处理社会主义社会矛盾"><a href="#正确认识和处理社会主义社会矛盾" class="headerlink" title="正确认识和处理社会主义社会矛盾"></a>正确认识和处理社会主义社会矛盾</h3><h3 id="正确认识以毛泽东为代表的中国共产党人对中国社会主义建设道路的探索"><a href="#正确认识以毛泽东为代表的中国共产党人对中国社会主义建设道路的探索" class="headerlink" title="正确认识以毛泽东为代表的中国共产党人对中国社会主义建设道路的探索"></a>正确认识以毛泽东为代表的中国共产党人对中国社会主义建设道路的探索</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;社会主义建设道路初步探索的理论成果&quot;&gt;&lt;a href=&quot;#社会主义建设道路初步探索的理论成果&quot; class=&quot;headerlink&quot; title=&quot;社会主义建设道路初步探索的理论成果&quot;&gt;&lt;/a&gt;社会主义建设道路初步探索的理论成果&lt;/h1&gt;&lt;h2 id=&quot;识记&quot;&gt;&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="note" scheme="https://kestre.github.io/blog/tags/note/"/>
-    
-      <category term="专插本" scheme="https://kestre.github.io/blog/tags/%E4%B8%93%E6%8F%92%E6%9C%AC/"/>
-    
-      <category term="政治" scheme="https://kestre.github.io/blog/tags/%E6%94%BF%E6%B2%BB/"/>
     
   </entry>
   
